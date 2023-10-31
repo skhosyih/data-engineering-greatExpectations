@@ -1,0 +1,13 @@
+[2023-09-26T03:33:09.971+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: my_dag.training_model_C manual__2023-09-26T03:32:59.678243+00:00 [queued]>
+[2023-09-26T03:33:10.096+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: my_dag.training_model_C manual__2023-09-26T03:32:59.678243+00:00 [queued]>
+[2023-09-26T03:33:10.114+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-09-26T03:33:10.254+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): training_model_C> on 2023-09-26 03:32:59.678243+00:00
+[2023-09-26T03:33:10.272+0000] {standard_task_runner.py:57} INFO - Started process 219 to run task
+[2023-09-26T03:33:10.295+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'training_model_C', 'manual__2023-09-26T03:32:59.678243+00:00', '--job-id', '70', '--raw', '--subdir', 'DAGS_FOLDER/my_dag.py', '--cfg-path', '/tmp/tmp5ec62lxb']
+[2023-09-26T03:33:10.301+0000] {standard_task_runner.py:85} INFO - Job 70: Subtask training_model_C
+[2023-09-26T03:33:10.636+0000] {task_command.py:410} INFO - Running <TaskInstance: my_dag.training_model_C manual__2023-09-26T03:32:59.678243+00:00 [running]> on host b9f7eb4d6527
+[2023-09-26T03:33:11.457+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='my_dag' AIRFLOW_CTX_TASK_ID='training_model_C' AIRFLOW_CTX_EXECUTION_DATE='2023-09-26T03:32:59.678243+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-26T03:32:59.678243+00:00'
+[2023-09-26T03:33:11.616+0000] {python.py:183} INFO - Done. Returned value was: 5
+[2023-09-26T03:33:11.949+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=my_dag, task_id=training_model_C, execution_date=20230926T033259, start_date=20230926T033309, end_date=20230926T033311
+[2023-09-26T03:33:12.176+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-09-26T03:33:12.361+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

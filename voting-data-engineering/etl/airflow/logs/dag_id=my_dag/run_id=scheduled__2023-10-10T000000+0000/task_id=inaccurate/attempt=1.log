@@ -1,0 +1,24 @@
+[2023-10-11T11:43:52.008+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: my_dag.inaccurate scheduled__2023-10-10T00:00:00+00:00 [queued]>
+[2023-10-11T11:43:52.152+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: my_dag.inaccurate scheduled__2023-10-10T00:00:00+00:00 [queued]>
+[2023-10-11T11:43:52.167+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-10-11T11:43:52.483+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): inaccurate> on 2023-10-10 00:00:00+00:00
+[2023-10-11T11:43:52.563+0000] {standard_task_runner.py:57} INFO - Started process 94 to run task
+[2023-10-11T11:43:52.569+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'inaccurate', 'scheduled__2023-10-10T00:00:00+00:00', '--job-id', '98', '--raw', '--subdir', 'DAGS_FOLDER/my_dag.py', '--cfg-path', '/tmp/tmpftpi3fs6']
+[2023-10-11T11:43:52.615+0000] {standard_task_runner.py:85} INFO - Job 98: Subtask inaccurate
+[2023-10-11T11:43:53.303+0000] {task_command.py:410} INFO - Running <TaskInstance: my_dag.inaccurate scheduled__2023-10-10T00:00:00+00:00 [running]> on host b9f7eb4d6527
+[2023-10-11T11:43:54.384+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='my_dag' AIRFLOW_CTX_TASK_ID='inaccurate' AIRFLOW_CTX_EXECUTION_DATE='2023-10-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-10-10T00:00:00+00:00'
+[2023-10-11T11:43:54.401+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-10-11T11:43:54.415+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "echo 'inaccurate"]
+[2023-10-11T11:43:54.529+0000] {subprocess.py:86} INFO - Output:
+[2023-10-11T11:43:54.547+0000] {subprocess.py:93} INFO - /bin/bash: -c: line 1: unexpected EOF while looking for matching `''
+[2023-10-11T11:43:54.556+0000] {subprocess.py:93} INFO - /bin/bash: -c: line 2: syntax error: unexpected end of file
+[2023-10-11T11:43:54.593+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2023-10-11T11:43:54.724+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 211, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2023-10-11T11:43:54.758+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=my_dag, task_id=inaccurate, execution_date=20231010T000000, start_date=20231011T114352, end_date=20231011T114354
+[2023-10-11T11:43:54.931+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 98 for task inaccurate (Bash command failed. The command returned a non-zero exit code 2.; 94)
+[2023-10-11T11:43:55.069+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-10-11T11:43:55.293+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

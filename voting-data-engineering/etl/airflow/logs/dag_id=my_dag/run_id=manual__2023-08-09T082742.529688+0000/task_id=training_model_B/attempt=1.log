@@ -1,0 +1,16 @@
+[2023-08-09T08:28:03.083+0000] {logging_mixin.py:150} INFO - Changing /opt/***/logs/dag_id=my_dag/run_id=manual__2023-08-09T08:27:42.529688+00:00/task_id=training_model_B permission to 509
+[2023-08-09T08:28:03.542+0000] {logging_mixin.py:150} INFO - Changing /opt/***/logs/dag_id=my_dag/run_id=manual__2023-08-09T08:27:42.529688+00:00/task_id=training_model_B permission to 509
+[2023-08-09T08:28:04.301+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: my_dag.training_model_B manual__2023-08-09T08:27:42.529688+00:00 [queued]>
+[2023-08-09T08:28:04.507+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: my_dag.training_model_B manual__2023-08-09T08:27:42.529688+00:00 [queued]>
+[2023-08-09T08:28:04.536+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-08-09T08:28:04.815+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): training_model_B> on 2023-08-09 08:27:42.529688+00:00
+[2023-08-09T08:28:04.968+0000] {standard_task_runner.py:57} INFO - Started process 2831 to run task
+[2023-08-09T08:28:05.223+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'training_model_B', 'manual__2023-08-09T08:27:42.529688+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/my_dag.py', '--cfg-path', '/tmp/tmpnjxhanj7']
+[2023-08-09T08:28:05.446+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask training_model_B
+[2023-08-09T08:28:06.933+0000] {logging_mixin.py:150} INFO - Changing /opt/***/logs/dag_id=my_dag/run_id=manual__2023-08-09T08:27:42.529688+00:00/task_id=training_model_B permission to 509
+[2023-08-09T08:28:07.026+0000] {task_command.py:410} INFO - Running <TaskInstance: my_dag.training_model_B manual__2023-08-09T08:27:42.529688+00:00 [running]> on host 0ff7fa45765f
+[2023-08-09T08:28:09.444+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='my_dag' AIRFLOW_CTX_TASK_ID='training_model_B' AIRFLOW_CTX_EXECUTION_DATE='2023-08-09T08:27:42.529688+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-08-09T08:27:42.529688+00:00'
+[2023-08-09T08:28:09.451+0000] {python.py:183} INFO - Done. Returned value was: 3
+[2023-08-09T08:28:09.885+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=my_dag, task_id=training_model_B, execution_date=20230809T082742, start_date=20230809T082804, end_date=20230809T082809
+[2023-08-09T08:28:10.136+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-08-09T08:28:10.477+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

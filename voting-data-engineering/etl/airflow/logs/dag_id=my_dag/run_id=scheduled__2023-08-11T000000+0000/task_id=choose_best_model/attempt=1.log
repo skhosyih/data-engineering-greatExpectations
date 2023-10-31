@@ -1,0 +1,19 @@
+[2023-09-04T12:40:52.399+0000] {logging_mixin.py:150} INFO - Changing /opt/***/logs/dag_id=my_dag/run_id=scheduled__2023-08-11T00:00:00+00:00/task_id=choose_best_model permission to 509
+[2023-09-04T12:40:52.832+0000] {logging_mixin.py:150} INFO - Changing /opt/***/logs/dag_id=my_dag/run_id=scheduled__2023-08-11T00:00:00+00:00/task_id=choose_best_model permission to 509
+[2023-09-04T12:40:54.779+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: my_dag.choose_best_model scheduled__2023-08-11T00:00:00+00:00 [queued]>
+[2023-09-04T12:40:54.933+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: my_dag.choose_best_model scheduled__2023-08-11T00:00:00+00:00 [queued]>
+[2023-09-04T12:40:54.959+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-09-04T12:40:55.227+0000] {taskinstance.py:1327} INFO - Executing <Task(BranchPythonOperator): choose_best_model> on 2023-08-11 00:00:00+00:00
+[2023-09-04T12:40:55.352+0000] {standard_task_runner.py:57} INFO - Started process 95 to run task
+[2023-09-04T12:40:55.380+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'choose_best_model', 'scheduled__2023-08-11T00:00:00+00:00', '--job-id', '50', '--raw', '--subdir', 'DAGS_FOLDER/my_dag.py', '--cfg-path', '/tmp/tmpy45239bb']
+[2023-09-04T12:40:55.442+0000] {standard_task_runner.py:85} INFO - Job 50: Subtask choose_best_model
+[2023-09-04T12:40:56.235+0000] {logging_mixin.py:150} INFO - Changing /opt/***/logs/dag_id=my_dag/run_id=scheduled__2023-08-11T00:00:00+00:00/task_id=choose_best_model permission to 509
+[2023-09-04T12:40:56.348+0000] {task_command.py:410} INFO - Running <TaskInstance: my_dag.choose_best_model scheduled__2023-08-11T00:00:00+00:00 [running]> on host 0ff7fa45765f
+[2023-09-04T12:40:57.568+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='my_dag' AIRFLOW_CTX_TASK_ID='choose_best_model' AIRFLOW_CTX_EXECUTION_DATE='2023-08-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-11T00:00:00+00:00'
+[2023-09-04T12:40:57.726+0000] {python.py:183} INFO - Done. Returned value was: accurate
+[2023-09-04T12:40:57.814+0000] {python.py:216} INFO - Branch callable return accurate
+[2023-09-04T12:40:57.864+0000] {skipmixin.py:164} INFO - Following branch accurate
+[2023-09-04T12:40:57.930+0000] {skipmixin.py:224} INFO - Skipping tasks ['inaccurate']
+[2023-09-04T12:40:58.827+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=my_dag, task_id=choose_best_model, execution_date=20230811T000000, start_date=20230904T124054, end_date=20230904T124058
+[2023-09-04T12:40:59.202+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-09-04T12:40:59.780+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

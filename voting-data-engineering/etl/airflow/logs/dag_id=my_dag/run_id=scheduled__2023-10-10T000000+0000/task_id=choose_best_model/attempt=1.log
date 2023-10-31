@@ -1,0 +1,16 @@
+[2023-10-11T11:43:36.827+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: my_dag.choose_best_model scheduled__2023-10-10T00:00:00+00:00 [queued]>
+[2023-10-11T11:43:36.924+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: my_dag.choose_best_model scheduled__2023-10-10T00:00:00+00:00 [queued]>
+[2023-10-11T11:43:36.935+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-10-11T11:43:37.143+0000] {taskinstance.py:1327} INFO - Executing <Task(BranchPythonOperator): choose_best_model> on 2023-10-10 00:00:00+00:00
+[2023-10-11T11:43:37.192+0000] {standard_task_runner.py:57} INFO - Started process 91 to run task
+[2023-10-11T11:43:37.257+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'choose_best_model', 'scheduled__2023-10-10T00:00:00+00:00', '--job-id', '97', '--raw', '--subdir', 'DAGS_FOLDER/my_dag.py', '--cfg-path', '/tmp/tmp0drue11_']
+[2023-10-11T11:43:37.286+0000] {standard_task_runner.py:85} INFO - Job 97: Subtask choose_best_model
+[2023-10-11T11:43:38.088+0000] {task_command.py:410} INFO - Running <TaskInstance: my_dag.choose_best_model scheduled__2023-10-10T00:00:00+00:00 [running]> on host b9f7eb4d6527
+[2023-10-11T11:43:38.811+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='my_dag' AIRFLOW_CTX_TASK_ID='choose_best_model' AIRFLOW_CTX_EXECUTION_DATE='2023-10-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-10-10T00:00:00+00:00'
+[2023-10-11T11:43:38.922+0000] {python.py:183} INFO - Done. Returned value was: inaccurate
+[2023-10-11T11:43:38.927+0000] {python.py:216} INFO - Branch callable return inaccurate
+[2023-10-11T11:43:38.944+0000] {skipmixin.py:164} INFO - Following branch inaccurate
+[2023-10-11T11:43:38.950+0000] {skipmixin.py:224} INFO - Skipping tasks ['accurate']
+[2023-10-11T11:43:39.487+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=my_dag, task_id=choose_best_model, execution_date=20231010T000000, start_date=20231011T114336, end_date=20231011T114339
+[2023-10-11T11:43:39.807+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-10-11T11:43:40.146+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
