@@ -79,12 +79,15 @@ docker compose up
 ---
 
 ## GreatExpectations Setup and Run
-1. Install Great Expectations and Great Expectations for Airflow in this command:
+1. Install Great Expectations, Great Expectations, and also dbt for airflow for Airflow in this command:
 ```
 pip install great-expectations
 pip install airflow-provider-great-expectations
+pip install airflow-dbt
 ```
-2. 
+2. Create `.env`, `Dockerfile`, `requirements.txt` files on folder **`voting-data-engineering/etl/airflow`** based on this [link](https://github.com/skhosyih/data-engineering-greatExpectations/tree/main/voting-data-engineering/etl/airflow) to set requirement for insert the GreatExpectations and also dbt
+3. Set the `docker-compose.yaml` based on this [link](https://github.com/skhosyih/data-engineering-greatExpectations/blob/main/voting-data-engineering/etl/airflow/docker-compose.yaml)
+4. GreatExpectations always run if you initialize the GreatExpectations package on Jupyter Notebook files, or based set on `schedule_interval` in Airflow  
 ---
 
 ## PostgreSQL Setup and Run
