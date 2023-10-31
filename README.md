@@ -51,7 +51,6 @@
    * `airflow`: For orchestrate data pipeline and data quality
    * `gx`: For check the data quality
 
-
 ## Docker Setup
 1. Install Docker Desktop and Open `Docker Desktop Installer.exe`
 2. When prompted, ensure the Use WSL 2 instead of Hyper-V option on the Configuration page is selected or not depending on your choice of backend
@@ -59,27 +58,41 @@
 4. When the installation is successful, select Close to complete the installation process
 ---
 
-## Airflow Setup
+## Airflow Setup and Run
 1. Open VSCode and choose the folder **`voting-data-engineering/etl/airflow`** by fetching `docker-compose.yaml` on the terminal. Insert this code in terminal:
 ```
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.6.3/docker-compose.yaml'
 ``` 
-2. Make a ./dags ./logs ./plugins ./config dir and set the user 
+2. Make a `./dags`, `./logs`, `./plugins`, `./config` dir and set the user 
 ```
 mkdir -p ./dags ./logs ./plugins ./config
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
+3. Initialize the database on folder **`voting-data-engineering/etl/airflow`** using this command:
+```
+docker compose up airflow-init
+```
+4. Run the airflow on folder **`voting-data-engineering/etl/airflow`** using this command:
+```
+docker compose up
+```
 ---
 
-## GreatExpectations Setup
-1. Install GreatExpectations
+## GreatExpectations Setup and Run
+1. Install Great Expectations and Great Expectations for Airflow in this command:
+```
+pip install great-expectations
+pip install airflow-provider-great-expectations
+```
+2. 
 ---
 
-## PostgreSQL Setup
+## PostgreSQL Setup and Run
 1. Install `PostgreSQL`
 2. Install `DBeaver` from this [link](https://dbeaver.io/)
 3. Make a PostgreSQL connection on `DBeaver` called `postgres` and the credentials refers from [`Credentials`](https://github.com/skhosyih/data-engineering-greatExpectations/blob/main/README.md#credentials)
 4. Make a table called `payment` and load a table from a [payments](https://github.com/skhosyih/data-engineering-greatExpectations/blob/main/voting-data-engineering/data/mart/payments.csv) csv file 
+5. `PostgreSQL` always run in the background
 ---
 
 ## Additional Resources
