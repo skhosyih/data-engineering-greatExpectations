@@ -38,7 +38,8 @@
 
 ## Docker Setup
 1. Install Docker Desktop
-2. 
+2. Create a folder called `voting-data-engineering` on your local computer
+3. Open VSCode and choose the folder  `voting-data-engineering`
 ---
 
 
