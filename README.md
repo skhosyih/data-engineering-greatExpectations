@@ -24,20 +24,37 @@
 
 ## Credentials
 * Airflow (http://localhost:8080)
-	* User: airflow
-	* Password: airflow
+	* User: `airflow`
+	* Password: `airflow`
 
 * PostgreSQL (localhost:5432)
-	* Database: postgres 
-	* Schema: postgres
-	* User: postgres
-	* Password: KantorAHP123!
+	* Host: `localhost`
+	* Port: `5432`
+	* Database: `postgres` 
+	* Schema: `postgres`
+	* User: `postgres`
+	* Password: `KantorAHP123!`
 ---
-## PostgreSQL Setup
-1. Make a PostgreSQL connection on `DBeaver` called `postgres` and the credentials refers to [`**Credentials**`]()
+
+## Docker Setup
+1. Install Docker Desktop
 2. 
+---
 
 
+## Airflow Setup
+1. Install Airflow
+---
+
+## GreatExpectations Setup
+1. Install GreatExpectations
+---
+
+## PostgreSQL Setup
+1. Install `PostgreSQL`
+2. Install `DBeaver` from this [link](https://dbeaver.io/)
+3. Make a PostgreSQL connection on `DBeaver` called `postgres` and the credentials refers from [`Credentials`](https://github.com/skhosyih/data-engineering-greatExpectations/blob/main/README.md#credentials)
+4. Make a table called `payment` and load a table from a [payments](https://github.com/skhosyih/data-engineering-greatExpectations/blob/main/voting-data-engineering/data/mart/payments.csv) csv file 
 ---
 
 ## Additional Resources
