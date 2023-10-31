@@ -27,7 +27,7 @@
 	* User: `airflow`
 	* Password: `airflow`
 
-* PostgreSQL (localhost:5432)
+* PostgreSQL (`localhost:5432`)
 	* Host: `localhost`
 	* Port: `5432`
 	* Database: `postgres` 
@@ -64,7 +64,7 @@
 ```
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.6.3/docker-compose.yaml'
 ``` 
-2. Make a dir and set the user 
+2. Make a ./dags ./logs ./plugins ./config dir and set the user 
 ```
 mkdir -p ./dags ./logs ./plugins ./config
 echo -e "AIRFLOW_UID=$(id -u)" > .env
