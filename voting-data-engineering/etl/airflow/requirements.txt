@@ -1,0 +1,2 @@
+airflow-provider-great-expectations==0.2.7
+airflow-dbt
