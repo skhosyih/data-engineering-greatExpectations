@@ -48,7 +48,7 @@ class ColumnValuesEqualZero(ColumnMapMetricProvider):
     # <snippet name="tests/integration/docusaurus/expectations/creating_custom_expectations/expect_column_values_to_equal_three.py pandas">
     @column_condition_partial(engine=PandasExecutionEngine)
     def _pandas(cls, column, **kwargs):
-        return (column > 0) | (column < 0)
+        return column != 0
         # </snippet>
 
     # <snippet name="tests/integration/docusaurus/expectations/creating_custom_expectations/expect_column_values_to_equal_three.py spark_definition">
@@ -79,7 +79,7 @@ class ColumnValuesEqualZero(ColumnMapMetricProvider):
         column = F.col(column_name)
         # </snippet>
         # <snippet name="tests/integration/docusaurus/expectations/creating_custom_expectations/expect_column_values_to_equal_three.py spark_query">
-        query = F.when((column > 0) | (column < 0), F.lit(False)).otherwise(F.lit(True))
+        query = F.when(column != 0, F.lit(False)).otherwise(F.lit(True))
 
         return (query, compute_domain_kwargs, accessor_domain_kwargs)
         # </snippet>
